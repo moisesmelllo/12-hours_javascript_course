@@ -1,0 +1,1 @@
+console.log(`Estimated tax (10%): $${Math.round(((2095 + 799 + 499) * 2) * 0.1) / 100}`)
