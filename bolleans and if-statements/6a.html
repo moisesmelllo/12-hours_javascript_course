@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const hora = new Date().getHours();
+        const minutos = new Date().getMinutes();
+        const hour = hora + ':' + minutos
+        const name = 'Moises'
+        console.log(hour);
+        if (hora >= 6 && hora <= 12) {
+            alert(`Good mourning ${name}`);
+        } else if (hora > 12 && hora <= 17) {
+            alert(`Good afternoon ${name}`);
+        } else {
+            alert(`Good night ${name}`);
+        }
+    </script>
+</body>
+</html>
