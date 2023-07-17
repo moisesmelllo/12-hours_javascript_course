@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <div>
+        <p class="title"></p>
+        <p>
+            <button onclick="numero('1')">1
+            </button>
+
+            <button onclick="numero('2')">2
+            </button>
+
+            <button onclick="numero('3')">3
+            </button>
+
+            <button class="operação" onclick="numero(' + ')">+
+            </button>
+        </p>
+        <p>
+            <button onclick="numero('4')">4
+            </button>
+
+            <button onclick="numero('5')">5
+            </button>
+
+            <button onclick="numero('6')">6
+            </button>
+
+            <button class="operação" onclick="numero(' - ')">-
+            </button>
+        </p>
+        <p>
+            <button onclick="numero('7')">7
+            </button>
+
+            <button onclick="numero('8')">8
+            </button>
+
+            <button onclick="numero('9')">9
+            </button>
+
+            <button class="operação" onclick="numero(' * ')">x
+            </button>
+        </p>
+        <p>
+            <button onclick="numero(' 0 ')">0
+            </button>
+
+            <button onclick="numero('.')">.
+            </button>
+
+            <button onclick="calculation = eval(calculation);
+                paragrafo.innerHTML = eval(calculation)
+                console.log(calculation)">=
+            </button>
+
+            <button class="operação" onclick="numero(' / ')">/
+            </button>
+        <p>
+        <p>
+            <button onclick="calculation = '';
+                paragrafo.innerHTML = '0'
+                console.log(calculation)">reset
+            </button>
+        </p>
+    </div>
+    <script src="javascript/script.js"></script>
+</body>
+</html>

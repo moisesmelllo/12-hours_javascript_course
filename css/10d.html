@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .botao {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 8px;
+            width: 100px;
+            border-radius: 10px;
+        }
+        .is-toggled {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 8px;
+            width: 100px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggle('1')" id="1" class="botao is-toggled">Gaming</button>
+    <button onclick="toggle('2')" id="2" class="botao is-toggled">Music</button>
+    <button onclick="toggle('3')" id="3" class="botao is-toggled">tech</button>
+    
+    <script>
+        function toggle(id) {
+            const previousButton = document.querySelector('.is-toggled');
+
+            if (previousButton) {
+                previousButton.classList.remove('is-toggled')
+            }
+
+            const buttonElement = document.getElementById(id);
+
+            if (buttonElement.classList.contains('is-toggled')) {
+                buttonElement.classList.remove('is-toggled');
+            } else {
+                buttonElement.classList.add('is-toggled');
+            }
+        }
+    </script>
+</body>
+</html>
