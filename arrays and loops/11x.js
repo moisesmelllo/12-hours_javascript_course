@@ -1,7 +1,12 @@
-const todoList = [];
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
+
+renderTodoList();
 
 function renderTodoList() {
+    localTodoList = localStorage.setItem('todoList', JSON.stringify(todoList))
     let todoListHtml = '';
+
+    
 
     for (let i = 0; i < todoList.length; i++) {
         const todoObject = todoList[i];
