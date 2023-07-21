@@ -16,6 +16,24 @@
         }
       }
       */
+
+      let isAutoPlaying = false;
+      let intervalId = null;
+
+      function autoPlay() {
+        if (!isAutoPlaying) {
+          intervalId = setInterval(function() {
+          const playerMove = pickComputerMove();
+          playGame(playerMove);
+          }, 1000);
+          isAutoPlaying = true;
+        } else {
+          clearInterval(intervalId);
+          intervalId = null;
+          isAutoPlaying = false;
+        }
+      }
+
     
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
@@ -67,8 +85,8 @@
 
         document.querySelector('.js-moves').innerHTML
             = `You
-              <img src="images/${playerMove}-emoji.png" class="move-icon">
-              <img src="images/${computerMove}-emoji.png" class="move-icon">
+              <img src="10-project/images/${playerMove}-emoji.png" class="move-icon">
+              <img src="10-project/images/${computerMove}-emoji.png" class="move-icon">
               Computer`
 
       }
