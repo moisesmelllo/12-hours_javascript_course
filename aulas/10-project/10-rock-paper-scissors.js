@@ -22,17 +22,60 @@
 
       function autoPlay() {
         if (!isAutoPlaying) {
-          intervalId = setInterval(function() {
+          intervalId = setInterval(() => {
           const playerMove = pickComputerMove();
           playGame(playerMove);
           }, 1000);
           isAutoPlaying = true;
         } else {
+          buttonAutoElement.innerHTML = 'Auto Play';
           clearInterval(intervalId);
           intervalId = null;
           isAutoPlaying = false;
         }
       }
+
+      buttonAutoElement = document.querySelector('.js-auto-button')
+
+      buttonAutoElement.addEventListener('click', () => {
+        buttonAutoElement.innerHTML = 'Stop Playing';
+        autoPlay();
+      }
+      )
+
+    resetButtonElement = document.querySelector('.js-reset-score-button');
+
+    resetButtonElement.addEventListener('click', () => {
+      const confirmation = confirm('Are you sure you want to reset the score?')
+            if (confirmation) {
+              score.wins = 0;
+              score.losses = 0;
+              score.ties = 0;
+              localStorage.removeItem('score');
+              updateScoreElement();
+            }
+          }
+    )
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'a') {
+          buttonAutoElement.innerHTML = 'Stop Playing';
+          autoPlay();
+      } 
+  });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === ' ') {
+            const confirmation = confirm('Are you sure you want to reset the score?')
+            if (confirmation) {
+              score.wins = 0;
+              score.losses = 0;
+              score.ties = 0;
+              localStorage.removeItem('score');
+              updateScoreElement();
+            }
+            
+        }});
 
     
       function playGame(playerMove) {
